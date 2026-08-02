@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect 
 from todolist.models import Task
+from todolist.forms import TaskForm
 
 # from django.http import HttpResponse, JsonResponse
 
@@ -15,6 +16,12 @@ def todolist(request):
     # return HttpResponse("<h1>this is my response</h1>")
     # return JsonResponse(data)
     
+    if request.method == "POST":
+        form_data = TaskForm(request.POST or None)
+        if form_data.is_valid():
+            form_data.save()
+            return redirect("todolist")
+
     all_tasks = Task.objects.all()
     context = {
             'page': 'Task List',

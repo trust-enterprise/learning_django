@@ -13,6 +13,18 @@
         {% comment %} {% for task in all_tasks %}
             {{task.task}} : {{task.is_completed}} <br>
         {% endfor %} {% endcomment %}
+
+        <br>
+        <form class="row g-3" method="post">
+            {% csrf_token %}
+            <div class="col-auto">
+                  <input type="text" name="task" placeholder="Click to add New Task">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary sb-3">Add Task</button>
+            </div>
+        </form>
+
         <table class="table table-bordered table-striped table-hover">
             
                 <thead class="table-dark">
