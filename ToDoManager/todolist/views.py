@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from todolist.models import Task
 
 # from django.http import HttpResponse, JsonResponse
 
@@ -13,10 +14,14 @@ def todolist(request):
     # data = {"name": "chanchal", "location": "mau"}
     # return HttpResponse("<h1>this is my response</h1>")
     # return JsonResponse(data)
+    
+    all_tasks = Task.objects.all()
     context = {
-            'page': 'Task List'
+            'page': 'Task List',
+            'all_tasks': all_tasks,
         }
     return render(request, "todolist.html", context)
+
 
 
 def contact(request):
