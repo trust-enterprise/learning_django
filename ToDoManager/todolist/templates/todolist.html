@@ -16,12 +16,16 @@
 
         <br>
         
-        <div class="alert alert-info" role="alert">
-            A simple info alert—check it out!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}            
+        {% endif %}
         
-        <form class="row g-3" method="post">
+        <form class="row g-3" method="POST">
             {% csrf_token %}
             <div class="col-auto">
                   <input type="text" name="task" placeholder="Click to add New Task">
