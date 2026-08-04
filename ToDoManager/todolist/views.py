@@ -6,10 +6,7 @@ from django.core.paginator import Paginator
 # from django.http import HttpResponse, JsonResponse
 
 def homepage(request):
-    context = { 
-        'page': 'Homepage'
-    }
-    return render(request, "main.html", context)
+    return render(request, "main.html", {})
 
 # Create your views here.
 def todolist(request):

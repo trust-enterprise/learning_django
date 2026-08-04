@@ -1,9 +1,18 @@
 {% extends "base.html" %} 
+{% load static %}
 
 {% block title %} 
     {{page}} 
 {% endblock title %} 
 
-{% block headline %}
-    <b>Welcome to {{page}} </b>
-{% endblock headline %}
+{% block content %}
+     <div class="container">
+        <img src="{% static 'image/plane.jpg' %}"  class="d-block mx-auto" alt="logo" height="220">
+        <div class="text-center">
+            <p class="h1">Quick and Easy to access Task</p>
+            <p class="h4">Stay organized. Stay productive </p> 
+            <p class="h5">Small steps every day lead to big results</p> 
+            <button type="button" class="btn btn-dark "><p class="h3">Getting Started</p></button>
+        </div>
+     </div>
+{% endblock content %}
