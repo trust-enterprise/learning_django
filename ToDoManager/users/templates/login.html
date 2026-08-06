@@ -10,7 +10,7 @@
         <hr>
         <form method="POST" class="col-6">
             {% csrf_token %}
-            {{register_form|crispy}}
+            {{form|crispy}}
             <button type="submit" class="btn btn-primary">Register </button>
         </form>
     </div>

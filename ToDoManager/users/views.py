@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from users.forms import CustomRegistrationForm
 from django.contrib import messages
 
+
 # Create your views here.
 def register(request):
 
@@ -14,3 +15,4 @@ def register(request):
     else:
         register_form = CustomRegistrationForm()
     return render(request, "register.html", {'register_form': register_form})
+ 
